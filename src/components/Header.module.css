@@ -1,0 +1,123 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(250, 250, 248, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.header.scrolled {
+  border-bottom-color: var(--border);
+  box-shadow: 0 2px 12px rgba(26, 26, 26, 0.06);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 140px;
+  gap: var(--space-6);
+}
+
+.logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 130px;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.navLink {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--charcoal-mid);
+  padding: 8px 14px;
+  border-radius: var(--r-full);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.navLink:hover {
+  background: var(--cream);
+  color: var(--charcoal);
+}
+
+.navLink.active {
+  color: var(--blue-primary);
+  background: var(--blue-light);
+}
+
+/* Hamburger */
+.menuBtn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--r-sm);
+  flex-shrink: 0;
+}
+
+.menuBtn:hover { background: var(--cream); }
+
+.bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--charcoal);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+.barOpen1 { transform: translateY(7px) rotate(45deg); }
+.barOpen2 { opacity: 0; }
+.barOpen3 { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu */
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3) 0 var(--space-4);
+  border-top: 1px solid var(--border);
+  background: var(--warm-white);
+}
+
+.mobileLink {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--charcoal-mid);
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+
+.mobileLink:hover {
+  background: var(--cream);
+  color: var(--charcoal);
+}
+
+.mobileLink.active {
+  color: var(--blue-primary);
+}
+
+@media (max-width: 768px) {
+  .nav { display: none; }
+  .menuBtn { display: flex; }
+}

@@ -1,0 +1,234 @@
+/* Shared styles across all service pages */
+
+.hero {
+  padding: var(--space-20) 0 var(--space-16);
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 760px;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin-top: var(--space-2);
+}
+
+.heroSub {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.heroCtas {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+
+.sectionHead {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sectionHead h2 { margin-top: var(--space-1); }
+.sectionHead p { color: var(--muted); font-size: 17px; }
+
+.altBg { background: var(--cream); }
+
+/* Audience grid (web dev page) */
+.audienceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.audienceCard {
+  border-radius: var(--r-xl);
+  border: 1.5px solid;
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.audienceCard h3 {
+  font-size: 1.1rem;
+  color: var(--charcoal);
+}
+
+/* Feature grid (2x3) */
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.featureIcon {
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.featureTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: var(--space-2);
+}
+
+/* Bullet list */
+.bulletList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.bulletList li {
+  font-size: 15px;
+  color: var(--charcoal-mid);
+  line-height: 1.6;
+  padding-left: var(--space-5);
+  position: relative;
+}
+
+.bulletList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue-primary);
+  flex-shrink: 0;
+}
+
+/* Process grid */
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.processCard {
+  background: #fff;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.processStep {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--blue-mid);
+  font-family: var(--font-serif);
+  line-height: 1;
+}
+
+.processCard h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.processCard p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* Benefit card */
+.benefitCard {
+  background: #fff;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Two col */
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+/* Service detail (affiliate) */
+.serviceDetailGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+.serviceDetailCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Web properties callout box */
+.webPropsCallout {
+  background: var(--blue-light);
+  border: 1.5px solid var(--blue-mid);
+  border-radius: var(--r-xl);
+  padding: var(--space-10) var(--space-10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+/* CTA Banner */
+.ctaBanner {
+  background: var(--blue-primary);
+  padding: var(--space-16) 0;
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.ctaBanner h2 {
+  color: #fff;
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+}
+
+.ctaBanner p {
+  color: rgba(255,255,255,0.78);
+  margin-top: var(--space-2);
+  font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .audienceGrid { grid-template-columns: 1fr; }
+  .featureGrid { grid-template-columns: 1fr 1fr; }
+  .processGrid { grid-template-columns: 1fr 1fr; }
+  .twoCol { grid-template-columns: 1fr; }
+  .serviceDetailGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .featureGrid { grid-template-columns: 1fr; }
+  .processGrid { grid-template-columns: 1fr; }
+  .ctaInner { flex-direction: column; align-items: flex-start; }
+  .webPropsCallout { flex-direction: column; align-items: flex-start; }
+}
