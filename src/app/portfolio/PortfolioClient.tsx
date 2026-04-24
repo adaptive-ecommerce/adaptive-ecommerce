@@ -4,6 +4,34 @@ import { useState } from 'react'
 import Image from 'next/image'
 import styles from './portfolio.module.css'
 
+type MediaItem = {
+  src: string
+  alt: string
+  caption: string
+  isVideo?: boolean
+  videoUrl?: string
+}
+
+type RoleLink = {
+  label: string
+  url: string
+}
+
+type Role = {
+  id: string
+  company: string
+  title: string
+  type: string
+  logo: string
+  accent: string
+  tagline: string
+  tags: string[]
+  summary: string
+  bullets: string[]
+  links: RoleLink[]
+  images: MediaItem[]
+}
+
 const skills = [
   'General Management', 'P&L Management', 'Ecommerce Strategy', 'Product Management',
   'AI Tools & Workflows', 'Prompt Engineering', 'Digital Marketing', 'SEO & SEM',
@@ -11,7 +39,7 @@ const skills = [
   'Business Development', 'Data Analytics', 'Team Leadership', 'Program Management',
 ]
 
-const roles = [
+const roles: Role[] = [
   {
     id: 'uber',
     company: 'Uber AI Solutions',
@@ -201,7 +229,7 @@ const roles = [
   },
 ]
 
-function RoleCard({ role }: { role: typeof roles[0] }) {
+function RoleCard({ role }: { role: Role }) {
   const [open, setOpen] = useState(false)
 
   return (
