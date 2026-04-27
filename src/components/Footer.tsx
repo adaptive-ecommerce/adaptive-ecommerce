@@ -9,19 +9,26 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.brand}>
-          <Image
-            src="/logo_400x400.jpg"
-            alt="Adaptive Ecommerce"
-            width={200}
-            height={72}
-            style={{
-              objectFit: 'contain',
-              objectPosition: 'left center',
-              background: '#fff',
-              borderRadius: '10px',
-              padding: '6px 10px',
-            }}
-          />
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            background: '#fff',
+            borderRadius: '10px',
+            padding: '8px 12px',
+            width: 'fit-content',
+          }}>
+            <Image
+              src="/logo_400x400.jpg"
+              alt="Adaptive Ecommerce"
+              width={130}
+              height={50}
+              style={{
+                objectFit: 'contain',
+                objectPosition: 'left center',
+                display: 'block',
+              }}
+            />
+          </div>
           <p className={styles.tagline}>
             AI-driven ecommerce and digital media solutions for entrepreneurs and growing businesses.
           </p>
