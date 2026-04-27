@@ -1,0 +1,245 @@
+.hero {
+  background: linear-gradient(160deg, var(--cream) 0%, var(--warm-white) 55%);
+  padding: var(--space-20) 0 var(--space-16);
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  max-width: 720px;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin-top: var(--space-2);
+}
+
+.heroSub {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.altBg { background: var(--cream); }
+
+.sectionHead {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sectionHead h2 { margin-top: var(--space-1); }
+.sectionHead p { color: var(--muted); font-size: 17px; }
+
+/* Mission */
+.missionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: start;
+}
+
+.missionContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.missionContent p {
+  font-size: 16px;
+  color: var(--charcoal-mid);
+  line-height: 1.8;
+}
+
+.missionStats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  position: sticky;
+  top: 100px;
+}
+
+.statCard {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--space-6);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.statNum {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--blue-primary);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.statLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* Audience */
+.audienceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.audienceCard {
+  background: #fff;
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.audienceIcon {
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: var(--space-1);
+}
+
+.audienceCard h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.audienceCard p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* Services list */
+.serviceList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.serviceRow {
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: var(--space-8) var(--space-10);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-10);
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.serviceRow:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--blue-mid);
+}
+
+.serviceRowContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.serviceRow .btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.serviceRowContent h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.serviceRowContent p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* Values */
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+
+.valueCard {
+  background: #fff;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-sm);
+}
+
+.valueIcon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.valueCard h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.valueCard p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* CTA */
+.cta {
+  background: var(--blue-primary);
+  padding: var(--space-16) 0;
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.cta h2 { color: #fff; font-size: clamp(1.3rem, 2.5vw, 1.75rem); }
+.cta p { color: rgba(255,255,255,0.78); margin-top: var(--space-2); font-size: 16px; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .valuesGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .missionGrid { grid-template-columns: 1fr; }
+  .missionStats { position: static; }
+  .audienceGrid { grid-template-columns: 1fr; }
+  .serviceRow { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  .valuesGrid { grid-template-columns: 1fr; }
+  .ctaInner { flex-direction: column; align-items: flex-start; }
+  .missionStats { grid-template-columns: repeat(2, 1fr); }
+}

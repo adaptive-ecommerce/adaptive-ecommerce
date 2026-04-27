@@ -50,7 +50,9 @@ export default function Footer() {
           <div className={styles.col}>
             <h3 className={styles.colTitle}>Company</h3>
             <Link href="/">Home</Link>
+            <Link href="/about">About Us</Link>
             <Link href="/contact">Contact Us</Link>
+            <Link href="/privacy">Privacy Policy</Link>
           </div>
         </div>
       </div>
@@ -58,7 +60,11 @@ export default function Footer() {
       <div className={styles.bottom}>
         <div className="container">
           <p>© {year} Adaptive Ecommerce, LLC. All rights reserved.</p>
-          <p>Salt Lake City, Utah</p>
+          <p>
+            <Link href="/privacy" style={{ color: '#6B6B6B', textDecoration: 'underline', textUnderlineOffset: '2px' }}>
+              Privacy Policy
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
